@@ -1,5 +1,6 @@
+import Image from 'next/image';
 import React from 'react';
-import { VideoDetails } from '../types';
+import { VideoDetails } from '@/types';
 
 interface VideoPreviewProps {
   video: VideoDetails;
@@ -9,10 +10,12 @@ const VideoPreview: React.FC<VideoPreviewProps> = ({ video }) => {
   return (
     <div className="w-full bg-yt-dark rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
       <div className="relative aspect-video w-full overflow-hidden group">
-        <img 
-          src={video.thumbnailUrl} 
-          alt="Video Thumbnail" 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        <Image
+          src={video.thumbnailUrl}
+          alt="Video Thumbnail"
+          fill
+          sizes="(min-width: 1024px) 720px, 100vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60"></div>
         <div className="absolute bottom-4 left-4 right-4">

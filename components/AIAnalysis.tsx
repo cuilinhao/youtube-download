@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnalysisResult } from '../types';
+import { AnalysisResult } from '@/types';
 import { SparklesIcon } from './Icons';
 
 interface AIAnalysisProps {
@@ -66,7 +66,9 @@ const AIAnalysis: React.FC<AIAnalysisProps> = ({ data, loading }) => {
             </div>
             <div className="bg-gray-900/50 p-3 rounded-lg border border-gray-800">
                 <h4 className="text-xs font-bold text-gray-500 uppercase mb-1">Marketing Hook</h4>
-                <div className="text-purple-400 text-xs italic">"{data.marketingHook}"</div>
+                <div className="text-purple-400 text-xs italic">
+                  &ldquo;{data.marketingHook}&rdquo;
+                </div>
             </div>
         </div>
 
